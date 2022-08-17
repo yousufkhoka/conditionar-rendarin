@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import User from './components/user/User';
 
 function App() {
+
+const [familiar , setFmiliar] = useState(false)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>current value :{familiar.toString()} </h2>
+      <button onClick={()=>setFmiliar(!familiar)}>toggel</button>
+     <User familiar={familiar}></User>
     </div>
   );
 }
